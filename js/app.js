@@ -36,12 +36,30 @@ const displayPhones = phones => {
         
         `;
         phonesContainer.appendChild(phoneDiv);
-    })
+      })
+      //loading end
+      toggleSpinner(false);
 }
 
+//handle search button 
 document.getElementById('btn-search').addEventListener('click', function(){
+  //loading start
+  toggleSpinner(true);
   const searchField = document.getElementById('search-field');
   const searchText = searchField.value ;
   loadPhones(searchText);
 })
+
+
+//toggle spinner function
+
+const toggleSpinner = isLoading => {
+  const loadingSection = document.getElementById('loader');
+  if(isLoading){
+    loadingSection.classList.remove('d-none')
+  }
+  else{
+    loadingSection.classList.add('d-none')
+  }
+}
 // loadPhones();
