@@ -108,4 +108,4 @@ const displayPhoneDetails = phone => {
 
    `
 }
-// loadPhones('apple');
+// loadPhones('oppo');
